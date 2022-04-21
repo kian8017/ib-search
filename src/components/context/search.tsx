@@ -6,7 +6,7 @@ import { API_URL, MAX_RESULTS, MT } from "../../style/consts";
 import { SmallClearIcon } from "../elements/icons";
 import { useUserId } from "../hooks/useUserId";
 
-type SearchType = "specific" | "fallback" | "extended";
+export type SearchType = "specific" | "fallback" | "extended";
 
 interface SearchEntry {
   name: string;

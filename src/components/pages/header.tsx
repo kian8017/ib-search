@@ -1,7 +1,7 @@
 import { createRef, FunctionalComponent, h } from "preact";
 import { useContext, useState } from "preact/hooks";
 import { LocationContext } from "../context/location";
-import { SearchButtonContext } from "../context/search";
+import { SearchButtonContext, SearchType } from "../context/search";
 import { SearchHistoryUpdateContext } from "../context/searchHistory";
 import { ModalContext } from "../context/modal";
 import Select, { SingleValue } from "react-select";
@@ -75,7 +75,7 @@ const Header: FunctionalComponent = () => {
     clickSearchHistory(q);
     changeQuery(q);
     if (location !== null && type !== null) {
-      search.search(q, location.value, type.value);
+      search.search(q, location.value, type.value as SearchType);
     }
   };
 
@@ -91,7 +91,7 @@ const Header: FunctionalComponent = () => {
       toast.error("Please enter a query");
     } else {
       addSearchHistory(query);
-      search.search(query, c, t);
+      search.search(query, c, t as SearchType);
     }
   };
 

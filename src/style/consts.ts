@@ -4,8 +4,9 @@ export interface StringArray {
 }
 
 // Various
-//export const API_URL = "http://127.0.0.1:8018";
-export const API_URL = "https://api.indexbrain.org";
+const API_PROD = "https://api-prod.indexbrain.org";
+const API_DEV = "https://api-dev.indexbrain.org";
+export const API_URL = location.hostname === "indexbrain.org" ? API_PROD : API_DEV;
 export const MAX_RESULTS = 100;
 
 // Search History
