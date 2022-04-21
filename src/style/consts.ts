@@ -6,7 +6,7 @@ export interface StringArray {
 // Various
 const API_PROD = "https://api-prod.indexbrain.org";
 const API_DEV = "https://api-dev.indexbrain.org";
-export const API_URL = location.hostname === "indexbrain.org" ? API_PROD : API_DEV;
+export const API_URL = location.hostname === "search.indexbrain.org" ? API_PROD : API_DEV;
 export const MAX_RESULTS = 100;
 
 // Search History
