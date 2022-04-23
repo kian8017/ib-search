@@ -109,14 +109,14 @@ const Header: FunctionalComponent = () => {
         IndexBrain
       </h1>
       <Select<SelectOption>
-        className="m-1 basis-1/2 grow sm:-order-1 sm:basis-auto lg:grow-0 lg:basis-60"
+        className="m-1 basis-1/2 grow sm:-order-1 sm:basis-auto lg:grow-0 lg:basis-60 cy-select-location"
         placeholder="Location..."
         options={formattedLocations}
         onChange={(e) => setLocation(e)}
         value={location}
       />
       <Select<SelectOption>
-        className="m-1 basis-1/3 sm:-order-1 sm:basis-auto"
+        className="m-1 basis-1/3 sm:-order-1 sm:basis-auto cy-select-type"
         placeholder="Type..."
         options={NAME_TYPES}
         onChange={(e) => setType(e)}
@@ -129,7 +129,7 @@ const Header: FunctionalComponent = () => {
       >
         <div className="flex">
           <input
-            className="bg-transparent grow shrink px-3"
+            className="bg-transparent grow shrink px-3 cy-search"
             type="text"
             placeholder="Search..."
             onChange={(e) =>
@@ -142,13 +142,17 @@ const Header: FunctionalComponent = () => {
             ref={inputRef}
           />
           <MediumClearIcon
+            className="cy-search-clear"
             onClick={() => {
               setInputFocus();
               clearQuery();
             }}
           />
           <ColumnDivider />
-          <MediumSearchIcon onClick={submitSearch} />
+          <MediumSearchIcon
+            className="cy-search-button"
+            onClick={submitSearch}
+          />
         </div>
         <QueryDropdown
           show={queryFocused || mousedOver}

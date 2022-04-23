@@ -106,7 +106,9 @@ const searchHelper = async (
   userId: string
 ): Promise<[SearchEntry[], string]> => {
   let response = await fetch(
-    `${API_URL}/search?type=${searchTyp}&location=${loc}&entry_type=${type}&query=${query}&user_id=${userId}`
+    `${API_URL}/search?type=${searchTyp}&location=${loc}&entry_type=${type}&query=${encodeURIComponent(
+      query
+    )}&user_id=${userId}`
   );
   let body = await response.json();
   if (response.status !== 200) {
